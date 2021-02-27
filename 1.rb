@@ -16,6 +16,14 @@
 #
 ## Решение:
 
-
-
-
+count = 0
+File.open('data/1.txt' , 'r') do |file|
+    file.readline().each_char do |el|
+        if el == "("
+            count += 1
+        elsif el == ")"
+            count -= 1
+        end
+    end
+    puts count
+end

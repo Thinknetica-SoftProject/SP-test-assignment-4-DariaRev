@@ -15,5 +15,11 @@
 #
 #
 ## Решение:
-
-
+File.open('data/4.txt', 'r') do |file|
+    res = 0
+    for line in file.readlines().map do
+        length, height, width = line.split('x').map(&:to_i).sort()
+        res += 2*width*length + 2*length*height+2*height*width+length*height
+    end
+    puts(res)
+end

@@ -9,5 +9,11 @@
 # - Результат должен быть выведен в консоль командой puts
 #
 ## Решение:
-
-
+File.open('data/3.txt', 'r') do |file|
+    res = 0
+    for line in file.readlines() do
+        arr = line.split().map(&:to_i)
+        res += arr.max-arr.min
+    end
+    puts res
+end

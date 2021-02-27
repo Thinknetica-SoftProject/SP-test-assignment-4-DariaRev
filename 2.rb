@@ -15,4 +15,16 @@
 #
 #
 ## Решение:
-
+require "digest"
+inp = gets.chomp
+res_bool = false
+number = 1
+while !res_bool
+    hex = Digest::MD5.hexdigest(inp+number.to_s)
+    if hex.start_with?("00000")
+        res_bool = true
+        puts(number)
+    else
+        number +=1
+    end
+end
